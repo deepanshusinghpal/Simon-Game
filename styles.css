@@ -1,0 +1,114 @@
+/* General Page Styling */
+body {
+  text-align: center;
+  background: linear-gradient(to right, #000A1F, #00142D);  /* Darker blue */
+  font-family: 'Press Start 2P', cursive;
+  transition: background-color 0.5s ease;
+}
+
+/* Title */
+#level-title {
+  font-size: 2.5rem;
+  margin: 5%;
+  color: #FDD835;
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.3);
+  transition: color 0.3s;
+}
+
+/* Game Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Rows for buttons */
+.row {
+  display: flex;
+}
+
+/* Button Base Styling with Black Outlines */
+.btn {
+  margin: 15px;
+  height: 180px;
+  width: 180px;
+  border: 6px solid black;  /* Black outline */
+  border-radius: 25%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Darker Shades for Buttons */
+.green {
+  background: linear-gradient(145deg, #388E3C, #1B5E20);
+  box-shadow: 0 5px 15px rgba(56, 142, 60, 0.4);
+}
+
+.red {
+  background: linear-gradient(145deg, #D32F2F, #B71C1C);
+  box-shadow: 0 5px 15px rgba(211, 47, 47, 0.4);
+}
+
+.yellow {
+  background: linear-gradient(145deg, #FBC02D, #F9A825);
+  box-shadow: 0 5px 15px rgba(251, 192, 45, 0.4);
+}
+
+.blue {
+  background: linear-gradient(145deg, #1976D2, #0D47A1);
+  box-shadow: 0 5px 15px rgba(25, 118, 210, 0.4);
+}
+
+/* Hover Effect - Dark Glow */
+.btn:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+/* Button Click Animation */
+.pressed {
+  transform: scale(0.9);
+  box-shadow: 0 0 30px black;
+  border-color: black;  /* Keep the outline black */
+}
+
+/* Ripple Effect */
+.btn::after {
+  content: "";
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  top: 50%;
+  left: 50%;
+  background: rgba(0, 0, 0, 0.4);
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  transition: transform 0.4s ease-out;
+}
+
+.btn:active::after {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
+}
+
+/* Game Over Screen Effect */
+.game-over {
+  background-color: rgba(255, 0, 0, 0.8);
+  transition: background-color 0.5s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .btn {
+    width: 140px;
+    height: 140px;
+  }
+
+  #level-title {
+    font-size: 1.5rem;
+  }
+}
